@@ -19,7 +19,7 @@ exec \
             /app/code-server/bin/code-server \
                 --bind-addr 0.0.0.0:8443 \
                 --user-data-dir /config/data \
-                --extensions-dir /config/extensions \
+                --extensions-dir /extensions \
                 --disable-telemetry \
                 --auth "${AUTH}" \
                 "${PROXY_DOMAIN_ARG}" \

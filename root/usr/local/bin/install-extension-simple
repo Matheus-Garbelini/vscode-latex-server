@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+_install=(/app/code-server/bin/code-server "--extensions-dir" "/extensions" "--install-extension")
+
+if [ "$(whoami)" == "abc" ]; then
+    sudo "${_install[@]}" "$@"
+else
+    "${_install[@]}" "$@"
+fi
+
+# Fix permissions
+sudo chmod ugo+rw /extensions -R
+sudo chown abc /extensions -R
